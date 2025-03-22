@@ -83,23 +83,58 @@ Assign the result to a variable named swappedString.
 
 */
 
-//Starter Code
-// Task 1
+// --------------------------------------------------
+// Practice Problem #1
+// --------------------------------------------------
+
+// Exercise 1: Retrieve and Add Two Code Points
+let inputString = "Hi";
+let sumCodePoints = inputString.charCodeAt(0) + inputString.charCodeAt(1); // 'H' = 72, 'i' = 105 → 177
+
+// Exercise 2: Generate a String from Two Code Points
+let codePoint1 = 65;
+let codePoint2 = 66;
+let combinedString = String.fromCharCode(codePoint1) + String.fromCharCode(codePoint2); // "AB"
+
+// Exercise 3: Find the Character Difference
+let diffString = "Cat";
+let index1 = 0;
+let index2 = 2;
+let codePointDifference = Math.abs(diffString.charCodeAt(index1) - diffString.charCodeAt(index2)); // |67 - 116| = 49
+
+// --------------------------------------------------
+// Practice Problem #2
+// --------------------------------------------------
+
+// Task 1: Extract Code Points from Characters
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let firstCodePoint = inputString1.charCodeAt(0);  // 'C' = 67
+let thirdCodePoint = inputString1.charCodeAt(2);  // 'd' = 100
 
-// Task 2
-let wordFromCodePoints; // Your code here
+// Task 2: Create a Word from Code Points
+let wordFromCodePoints = String.fromCharCode(72, 101, 108, 108); // "Hell"
 
-// Task 3
+// Task 3: Swap First and Last Characters
 let inputString2 = "Launch";
-let swappedString; // Your code here
+let firstCharCode = inputString2.charCodeAt(0); // 'L'
+let lastCharCode = inputString2.charCodeAt(inputString2.length - 1); // 'h'
 
-// Log all results
-console.log({
-  firstCodePoint,
-  thirdCodePoint,
-  wordFromCodePoints,
-  swappedString,
-});
+let swappedString =
+  String.fromCharCode(lastCharCode) +
+  inputString2.slice(1, -1) +
+  String.fromCharCode(firstCharCode);
+
+// --------------------------------------------------
+// Log All Results
+// --------------------------------------------------
+
+console.log("----- Practice Problem #1 -----");
+console.log("sumCodePoints:", sumCodePoints); // 177
+console.log("combinedString:", combinedString); // "AB"
+console.log("codePointDifference:", codePointDifference); // 49
+
+console.log("\n----- Practice Problem #2 -----");
+console.log("firstCodePoint:", firstCodePoint); // 67
+console.log("thirdCodePoint:", thirdCodePoint); // 100
+console.log("wordFromCodePoints:", wordFromCodePoints); // "Hell"
+console.log("swappedString:", swappedString); // "hauncL"
